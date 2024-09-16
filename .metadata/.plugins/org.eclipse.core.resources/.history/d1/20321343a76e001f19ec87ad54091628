@@ -1,0 +1,101 @@
+package com.example.snowman.models;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+
+public class Invoice {
+
+    private String iNo;
+    private LocalDate iDate;
+    private String iEWayBillNo;
+    private String iModeTermsOfPayment;
+    private String iBuyersOrderNo;
+    private LocalDate iBuyersOrderDate;
+    private String iDespatchDocumentNo;
+    private LocalDateTime iDeliveryNoteDate;
+    private String iDespatchedThrough;
+    private String iDestination;
+    private String iDillOfLadingNo;
+    private String iMotorVehicleNo;
+    private String iTermsOfDelivery;
+	public String getiNo() {
+		return iNo;
+	}
+	public void setiNo(String iNo) {
+		this.iNo = iNo;
+	}
+	public LocalDate getiDate() {
+		return iDate;
+	}
+	public void setiDate(LocalDate iDate) {
+		this.iDate = iDate;
+	}
+	public String getiEWayBillNo() {
+		return iEWayBillNo;
+	}
+	public void setiEWayBillNo(String iEWayBillNo) {
+		this.iEWayBillNo = iEWayBillNo;
+	}
+	public String getiModeTermsOfPayment() {
+		return iModeTermsOfPayment;
+	}
+	public void setiModeTermsOfPayment(String iModeTermsOfPayment) {
+		this.iModeTermsOfPayment = iModeTermsOfPayment;
+	}
+	public String getiBuyersOrderNo() {
+		return iBuyersOrderNo;
+	}
+	public void setiBuyersOrderNo(String iBuyersOrderNo) {
+		this.iBuyersOrderNo = iBuyersOrderNo;
+	}
+	public LocalDate getiBuyersOrderDate() {
+		return iBuyersOrderDate;
+	}
+	public void setiBuyersOrderDate(LocalDate iBuyersOrderDate) {
+		this.iBuyersOrderDate = iBuyersOrderDate;
+	}
+	public String getiDespatchDocumentNo() {
+		return iDespatchDocumentNo;
+	}
+	public void setiDespatchDocumentNo(String iDespatchDocumentNo) {
+		this.iDespatchDocumentNo = iDespatchDocumentNo;
+	}
+	public LocalDateTime getiDeliveryNoteDate() {
+		return iDeliveryNoteDate;
+	}
+	public void setiDeliveryNoteDate(LocalDateTime iDeliveryNoteDate) {
+		this.iDeliveryNoteDate = iDeliveryNoteDate;
+	}
+	public String getiDespatchedThrough() {
+		return iDespatchedThrough;
+	}
+	public void setiDespatchedThrough(String iDespatchedThrough) {
+		this.iDespatchedThrough = iDespatchedThrough;
+	}
+	public String getiDestination() {
+		return iDestination;
+	}
+	public void setiDestination(String iDestination) {
+		this.iDestination = iDestination;
+	}
+	public String getiDillOfLadingNo() {
+		return iDillOfLadingNo;
+	}
+	public void setiDillOfLadingNo(String iDillOfLadingNo) {
+		this.iDillOfLadingNo = iDillOfLadingNo;
+	}
+	public String getiMotorVehicleNo() {
+		return iMotorVehicleNo;
+	}
+	public void setiMotorVehicleNo(String iMotorVehicleNo) {
+		this.iMotorVehicleNo = iMotorVehicleNo;
+	}
+	public String getiTermsOfDelivery() {
+		return iTermsOfDelivery;
+	}
+	public void setiTermsOfDelivery(String iTermsOfDelivery) {
+		this.iTermsOfDelivery = iTermsOfDelivery;
+	}
+    
+}

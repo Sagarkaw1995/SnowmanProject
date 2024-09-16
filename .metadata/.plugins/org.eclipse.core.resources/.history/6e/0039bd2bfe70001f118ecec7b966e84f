@@ -1,0 +1,5 @@
+package com.example.snowman.services;
+
+public class GoodReceiptNoteService {
+
+}

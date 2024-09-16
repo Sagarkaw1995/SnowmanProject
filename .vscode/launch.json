@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SnowmanApplication<Snowman>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.snowman.SnowmanApplication",
+            "projectName": "Snowman",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

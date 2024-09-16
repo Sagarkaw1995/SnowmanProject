@@ -1,0 +1,30 @@
+package com.example.snowman.models;
+
+import java.time.LocalDate;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class InvoicePayload {
+	
+    private Seller seller;
+    private Invoice invoice;
+    private Buyer buyer;
+    private Double totalValue;
+    private Double totalTaxableValue;
+    private Double totalIGST;
+    private Double totalCGST;
+    private Double totalSGST;
+    private Double totalTax;
+    private Double roundOff;
+    private Double totalInvoiceValue;
+    private String taxAmountInWords;
+    private String amountChargeableInWords;
+    private String declaration;
+    private String irn;
+    private String ackNo;
+    private LocalDate ackDate;
+   
+}

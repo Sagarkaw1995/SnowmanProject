@@ -1,0 +1,343 @@
+package com.example.snowman.models;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+@Entity
+public class InvoiceDB {
+	
+	@Id
+	@Column(name = "invoiceNumber")
+	private String iNo;
+	@Column(name = "sellerName")
+    private String sName;
+	@Column(name = "sellerAddress")
+    private String sAddress;
+	@Column(name = "sellerCIN")
+    private String sCin;
+	@Column(name = "sellerFSCNo")
+    private String sFscNo;
+	@Column(name = "sellerGSTIN")
+    private String sGstin;
+	@Column(name = "sellerEmail")
+    private String sEmail;
+	@Column(name = "invoiceDate")
+    private LocalDate iDate;
+	@Column(name = "invoiceEWayBillNo")
+    private String iEWayBillNo;
+	@Column(name = "invoiceModeTermsOfPayment")
+    private String iModeTermsOfPayment;
+	@Column(name = "invoiceBuyersOrderNo")
+    private String iBuyersOrderNo;
+	@Column(name = "invoiceBuyersOrderDate")
+    private LocalDate iBuyersOrderDate;
+	@Column(name = "invoiceDespatchDocumentNo")
+    private String iDespatchDocumentNo;
+	@Column(name = "invoiceDeliveryNoteDate")
+    private LocalDateTime iDeliveryNoteDate;
+	@Column(name = "invoiceDespatchedThrough")
+    private String iDespatchedThrough;
+	@Column(name = "invoiceDestination")
+    private String iDestination;
+	@Column(name = "invoiceDillOfLadingNo")
+    private String iDillOfLadingNo;
+	@Column(name = "invoiceMotorVehicleNo")
+    private String iMotorVehicleNo;
+	@Column(name = "invoiceTermsOfDelivery")
+    private String iTermsOfDelivery;
+	@Column(name = "buyerName")
+    private String bName;
+	@Column(name = "buyerAddress")
+    private String bAddress;
+	@Column(name = "buyerPinCode")
+    private String bPinCode;
+	@Column(name = "buyerGSTIN")
+    private String bGstin;
+	@Column(name = "buyerStateName")
+    private String bStateName;
+	@Column(name = "buyerCode")
+    private String bCode;
+	@Column(name = "totalValue")
+    private Double totalValue;
+	@Column(name = "totalTaxableValue")
+    private Double totalTaxableValue;
+	@Column(name = "totalIGST")
+    private Double totalIGST;
+	@Column(name = "totalCGST")
+    private Double totalCGST;
+	@Column(name = "totalSGST")
+    private Double totalSGST;
+	@Column(name = "totalTax")
+    private Double totalTax;
+	@Column(name = "roundOff")
+    private Double roundOff;
+	@Column(name = "totalInvoiceValue")
+    private Double totalInvoiceValue;
+	@Column(name = "taxAmountInWords")
+    private String taxAmountInWords;
+	@Column(name = "amountChargeableInWords")
+    private String amountChargeableInWords;
+	@Column(name = "declaration")
+    private String declaration;
+	@Column(name = "irn")
+    private String irn;
+	@Column(name = "ackNo")
+    private String ackNo;
+	@Column(name = "ackDate")
+    private LocalDate ackDate;
+	
+	@OneToMany(mappedBy = "invoiceDB", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ItemDB> items;
+    
+    
+	public String getsName() {
+		return sName;
+	}
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+	public String getsAddress() {
+		return sAddress;
+	}
+	public void setsAddress(String sAddress) {
+		this.sAddress = sAddress;
+	}
+	public String getsCin() {
+		return sCin;
+	}
+	public void setsCin(String sCin) {
+		this.sCin = sCin;
+	}
+	public String getsFscNo() {
+		return sFscNo;
+	}
+	public void setsFscNo(String sFscNo) {
+		this.sFscNo = sFscNo;
+	}
+	public String getsGstin() {
+		return sGstin;
+	}
+	public void setsGstin(String sGstin) {
+		this.sGstin = sGstin;
+	}
+	public String getsEmail() {
+		return sEmail;
+	}
+	public void setsEmail(String sEmail) {
+		this.sEmail = sEmail;
+	}
+	public String getiNo() {
+		return iNo;
+	}
+	public void setiNo(String iNo) {
+		this.iNo = iNo;
+	}
+	public LocalDate getiDate() {
+		return iDate;
+	}
+	public void setiDate(LocalDate iDate) {
+		this.iDate = iDate;
+	}
+	public String getiEWayBillNo() {
+		return iEWayBillNo;
+	}
+	public void setiEWayBillNo(String iEWayBillNo) {
+		this.iEWayBillNo = iEWayBillNo;
+	}
+	public String getiModeTermsOfPayment() {
+		return iModeTermsOfPayment;
+	}
+	public void setiModeTermsOfPayment(String iModeTermsOfPayment) {
+		this.iModeTermsOfPayment = iModeTermsOfPayment;
+	}
+	public String getiBuyersOrderNo() {
+		return iBuyersOrderNo;
+	}
+	public void setiBuyersOrderNo(String iBuyersOrderNo) {
+		this.iBuyersOrderNo = iBuyersOrderNo;
+	}
+	public LocalDate getiBuyersOrderDate() {
+		return iBuyersOrderDate;
+	}
+	public void setiBuyersOrderDate(LocalDate iBuyersOrderDate) {
+		this.iBuyersOrderDate = iBuyersOrderDate;
+	}
+	public String getiDespatchDocumentNo() {
+		return iDespatchDocumentNo;
+	}
+	public void setiDespatchDocumentNo(String iDespatchDocumentNo) {
+		this.iDespatchDocumentNo = iDespatchDocumentNo;
+	}
+	public LocalDateTime getiDeliveryNoteDate() {
+		return iDeliveryNoteDate;
+	}
+	public void setiDeliveryNoteDate(LocalDateTime iDeliveryNoteDate) {
+		this.iDeliveryNoteDate = iDeliveryNoteDate;
+	}
+	public String getiDespatchedThrough() {
+		return iDespatchedThrough;
+	}
+	public void setiDespatchedThrough(String iDespatchedThrough) {
+		this.iDespatchedThrough = iDespatchedThrough;
+	}
+	public String getiDestination() {
+		return iDestination;
+	}
+	public void setiDestination(String iDestination) {
+		this.iDestination = iDestination;
+	}
+	public String getiDillOfLadingNo() {
+		return iDillOfLadingNo;
+	}
+	public void setiDillOfLadingNo(String iDillOfLadingNo) {
+		this.iDillOfLadingNo = iDillOfLadingNo;
+	}
+	public String getiMotorVehicleNo() {
+		return iMotorVehicleNo;
+	}
+	public void setiMotorVehicleNo(String iMotorVehicleNo) {
+		this.iMotorVehicleNo = iMotorVehicleNo;
+	}
+	public String getiTermsOfDelivery() {
+		return iTermsOfDelivery;
+	}
+	public void setiTermsOfDelivery(String iTermsOfDelivery) {
+		this.iTermsOfDelivery = iTermsOfDelivery;
+	}
+	public String getbName() {
+		return bName;
+	}
+	public void setbName(String bName) {
+		this.bName = bName;
+	}
+	public String getbAddress() {
+		return bAddress;
+	}
+	public void setbAddress(String bAddress) {
+		this.bAddress = bAddress;
+	}
+	public String getbPinCode() {
+		return bPinCode;
+	}
+	public void setbPinCode(String bPinCode) {
+		this.bPinCode = bPinCode;
+	}
+	public String getbGstin() {
+		return bGstin;
+	}
+	public void setbGstin(String bGstin) {
+		this.bGstin = bGstin;
+	}
+	public String getbStateName() {
+		return bStateName;
+	}
+	public void setbStateName(String bStateName) {
+		this.bStateName = bStateName;
+	}
+	public String getbCode() {
+		return bCode;
+	}
+	public void setbCode(String bCode) {
+		this.bCode = bCode;
+	}
+	public Double getTotalValue() {
+		return totalValue;
+	}
+	public void setTotalValue(Double totalValue) {
+		this.totalValue = totalValue;
+	}
+	public Double getTotalTaxableValue() {
+		return totalTaxableValue;
+	}
+	public void setTotalTaxableValue(Double totalTaxableValue) {
+		this.totalTaxableValue = totalTaxableValue;
+	}
+	public Double getTotalIGST() {
+		return totalIGST;
+	}
+	public void setTotalIGST(Double totalIGST) {
+		this.totalIGST = totalIGST;
+	}
+	public Double getTotalCGST() {
+		return totalCGST;
+	}
+	public void setTotalCGST(Double totalCGST) {
+		this.totalCGST = totalCGST;
+	}
+	public Double getTotalSGST() {
+		return totalSGST;
+	}
+	public void setTotalSGST(Double totalSGST) {
+		this.totalSGST = totalSGST;
+	}
+	public Double getTotalTax() {
+		return totalTax;
+	}
+	public void setTotalTax(Double totalTax) {
+		this.totalTax = totalTax;
+	}
+	public Double getRoundOff() {
+		return roundOff;
+	}
+	public void setRoundOff(Double roundOff) {
+		this.roundOff = roundOff;
+	}
+	public Double getTotalInvoiceValue() {
+		return totalInvoiceValue;
+	}
+	public void setTotalInvoiceValue(Double totalInvoiceValue) {
+		this.totalInvoiceValue = totalInvoiceValue;
+	}
+	public String getTaxAmountInWords() {
+		return taxAmountInWords;
+	}
+	public void setTaxAmountInWords(String taxAmountInWords) {
+		this.taxAmountInWords = taxAmountInWords;
+	}
+	public String getAmountChargeableInWords() {
+		return amountChargeableInWords;
+	}
+	public void setAmountChargeableInWords(String amountChargeableInWords) {
+		this.amountChargeableInWords = amountChargeableInWords;
+	}
+	public String getDeclaration() {
+		return declaration;
+	}
+	public void setDeclaration(String declaration) {
+		this.declaration = declaration;
+	}
+	public String getIrn() {
+		return irn;
+	}
+	public void setIrn(String irn) {
+		this.irn = irn;
+	}
+	public String getAckNo() {
+		return ackNo;
+	}
+	public void setAckNo(String ackNo) {
+		this.ackNo = ackNo;
+	}
+	public LocalDate getAckDate() {
+		return ackDate;
+	}
+	public void setAckDate(LocalDate ackDate) {
+		this.ackDate = ackDate;
+	}
+	public List<ItemDB> getItems() {
+		return items;
+	}
+	public void setItems(List<ItemDB> items) {
+		this.items = items;
+	}
+	
+	
+    
+}

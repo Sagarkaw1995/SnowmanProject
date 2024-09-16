@@ -1,0 +1,43 @@
+package com.example.snowman.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.snowman.models.Buyer;
+import com.example.snowman.models.Invoice;
+import com.example.snowman.models.InvoicePayload;
+import com.example.snowman.models.Seller;
+import com.example.snowman.services.BuyerService;
+import com.example.snowman.services.InvoiceService;
+import com.example.snowman.services.SellerService;
+
+@RestController
+@RequestMapping("/snowman")
+public class InvoiceController {
+	   @Autowired
+	    private SellerService sellerService;
+	    @Autowired
+	    private InvoiceService invoiceService;
+	    @Autowired
+	    private BuyerService buyerService;
+
+	    @PostMapping("/invoice")
+	    public ResponseEntity<String> createInvoice(@RequestBody InvoicePayload payload) {
+	        Seller seller = payload.getSeller();
+	        seller.setInvoiceNo(payload.getInvoice().getInvoiceNo());
+	        Invoice invoice = payload.getInvoice();
+	        Buyer buyer = payload.getBuyer();
+	        buyer.setInvoiceNo(payload.getInvoice().getInvoiceNo());
+
+	        sellerService.save(seller);
+	        invoiceService.save(invoice);
+	        buyerService.save(buyer);
+
+
+	        return ResponseEntity.ok("Invoice created successfully");
+	    }
+}

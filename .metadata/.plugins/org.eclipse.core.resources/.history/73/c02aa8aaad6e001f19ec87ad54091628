@@ -1,0 +1,17 @@
+package com.example.snowman.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.models.Buyer;
+import com.example.snowman.repositories.BuyerRepository;
+
+@Service
+public class BuyerService {
+    @Autowired
+    private BuyerRepository buyerRepository;
+
+    public Buyer save(Buyer buyer) {
+        return buyerRepository.save(buyer);
+    }
+}

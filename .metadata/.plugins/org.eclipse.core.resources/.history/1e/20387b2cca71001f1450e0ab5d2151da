@@ -1,0 +1,21 @@
+package com.example.snowman.configurations;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.example.snowman.entities.InvoiceDB;
+import com.example.snowman.entities.PalletEntity;
+
+@Configuration
+public class AppConfig {
+    @Bean
+    public InvoiceDB invoiceDB() {
+        return new InvoiceDB();
+    }
+    
+    @Bean
+    public PalletEntity palletDB() {
+        return new PalletEntity();
+    }
+    
+}

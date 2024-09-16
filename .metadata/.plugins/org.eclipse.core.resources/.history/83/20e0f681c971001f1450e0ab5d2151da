@@ -1,0 +1,19 @@
+package com.example.snowman.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.example.snowman.entities.CartonDB;
+
+@Repository
+public interface CartonRepository extends JpaRepository<CartonDB, Long>{
+	
+	//List<CartonDB> findByInvoiceDB_InvoiceNumber(String iNo);
+	
+	@Query("SELECT c.descriptionOfGoods, COUNT(c) FROM CartonDB c WHERE c.invoiceDB.invoiceNumber = :invoiceNumber GROUP BY c.descriptionOfGoods")
+    List<Object[]> findCartonCountsByInvoiceNumber(@Param("invoiceNumber") String invoiceNumber);
+}

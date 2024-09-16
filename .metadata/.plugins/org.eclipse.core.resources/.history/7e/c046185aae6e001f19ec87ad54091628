@@ -1,0 +1,17 @@
+package com.example.snowman.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.models.InvoiceDB;
+import com.example.snowman.repositories.InvoiceDBRepository;
+
+@Service
+public class InvoiceDBService {
+    @Autowired
+    private InvoiceDBRepository invoiceDBRepository;
+
+    public InvoiceDB save(InvoiceDB invoiceDB) {
+        return invoiceDBRepository.save(invoiceDB);
+    }
+}

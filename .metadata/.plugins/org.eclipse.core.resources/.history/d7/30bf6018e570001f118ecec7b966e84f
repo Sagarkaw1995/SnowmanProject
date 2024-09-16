@@ -1,0 +1,25 @@
+package com.example.snowman.dto;
+
+import java.util.List;
+
+public class CartonRequest {
+	
+    private String palletID;
+    private List<CartonDTO> cartons;
+    
+    
+	public String getPalletID() {
+		return palletID;
+	}
+	public void setPalletID(String palletID) {
+		this.palletID = palletID;
+	}
+	public List<CartonDTO> getCartons() {
+		return cartons;
+	}
+	public void setCartons(List<CartonDTO> cartons) {
+		this.cartons = cartons;
+	}
+    
+    
+}

@@ -1,0 +1,46 @@
+1725868006224	Delete element
+1725868093389	Delete element
+1725868133814	Delete element
+1725884605270	Rename type 'InvoicePayload'
+1725884780841	Rename type 'InvoiceVO'
+1725887764351	Delete element
+1725887769675	Delete element
+1725887780302	Rename type 'InvoiceService'
+1725887876790	Delete element
+1725887880495	Delete element
+1725889754825	Delete element
+1726120772248	Rename type 'Pallot'
+1726121698428	Delete element
+1726127224962	Move compilation unit
+1726127243031	Move compilation unit
+1726127248945	Delete element
+1726127286554	Move compilation unit
+1726127294148	Move compilation unit
+1726127298790	Move compilation unit
+1726127305204	Move compilation unit
+1726127310280	Move compilation unit
+1726127323118	Rename package 'com.example.snowman.models'
+1726127918147	Rename type 'Buyer'
+1726127934701	Rename type 'CompleteInvoice'
+1726127977385	Rename type 'BuyerDTO'
+1726127988412	Rename type 'Pallet'
+1726128134159	Rename type 'CompleteInvoiceDTO'
+1726130221183	Rename type 'InvoiceDBService'
+1726130230908	Rename type 'PalletDBService'
+1726130443809	Delete element
+1726141756051	Rename type 'CartonDBRepository'
+1726141777974	Rename type 'InvoiceDBRepository'
+1726141788747	Rename type 'ItemDBRepository'
+1726141796328	Rename type 'PalletDBRepository'
+1726141844036	Delete element
+1726142932445	Delete element
+1726229542973	Rename type 'InvoiceDB'
+1726229558430	Rename type 'GoodReceiptNoteDB'
+1726229575487	Rename type 'CartonDB'
+1726229592467	Rename type 'ItemDB'
+1726229605440	Rename type 'PalletDB'
+1726229820682	Rename type 'CartonEntity'
+1726229831226	Rename type 'GoodReceiptNoteEntity'
+1726229841618	Rename type 'InvoiceEntity'
+1726229851960	Rename type 'ItemEntity'
+1726229861642	Rename type 'PalletEntity'

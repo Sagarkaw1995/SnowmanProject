@@ -1,0 +1,34 @@
+package com.example.snowman.models;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Pallet {
+	
+	@JsonProperty("pallotID")
+    private String pallotID;
+	
+	@JsonProperty("coordinatesXYZ")
+    private int coordinatesXYZ;
+	
+	@JsonProperty("maxWeight")
+    private int maxWeight;
+    
+	public String getPallotID() {
+		return pallotID;
+	}
+	public void setPallotID(String pallotID) {
+		this.pallotID = pallotID;
+	}
+	public int getCoordinatesXYZ() {
+		return coordinatesXYZ;
+	}
+	public void setCoordinatesXYZ(int coordinatesXYZ) {
+		this.coordinatesXYZ = coordinatesXYZ;
+	}
+	public int getMaxWeight() {
+		return maxWeight;
+	}
+	public void setMaxWeight(int maxWeight) {
+		this.maxWeight = maxWeight;
+	}
+}

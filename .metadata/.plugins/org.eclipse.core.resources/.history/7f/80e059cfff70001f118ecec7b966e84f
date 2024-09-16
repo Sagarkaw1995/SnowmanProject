@@ -1,0 +1,50 @@
+package com.example.snowman.services;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.repositories.CartonRepository;
+import com.example.snowman.repositories.GoodReceiptNoteRepository;
+import com.example.snowman.repositories.ItemRepository;
+
+@Service
+public class GoodReceiptNoteService {
+
+    @Autowired
+    private CartonRepository cartonRepository;
+
+    @Autowired
+    private ItemRepository itemRepository;
+
+    @Autowired
+    private GoodReceiptNoteRepository goodReceiptNoteRepository;
+
+    public List<GoodReceiptNoteDB> generateGoodReceiptNotes(String invoiceNumber) {
+        List<GoodReceiptNote> receiptNotes = new ArrayList<>();
+        Map<String, Integer> cartonSums = cartonRepository.findByInvoiceDB_InvoiceNumber(invoiceNumber).stream()
+            .collect(Collectors.groupingBy(CartonDB::getDescriptionOfGoods, Collectors.summingInt(CartonDB::getQuantity)));
+
+        for (Map.Entry<String, Integer> entry : cartonSums.entrySet()) {
+            String description = entry.getKey();
+            int invoicedQuantity = entry.getValue();
+            Item item = itemRepository.findByDescriptionOfGoods(description);
+            int actualQuantity = item != null ? item.getActualQuantity() : 0;
+            String netQuantity = invoicedQuantity > actualQuantity ? "greater" : invoicedQuantity < actualQuantity ? "less" : "equal";
+
+            GoodReceiptNote note = new GoodReceiptNote();
+            note.setInvoiceNumber(invoiceNumber);
+            note.setDescriptionOfGoods(description);
+            note.setInvoicedQuantity(invoicedQuantity);
+            note.setActualQuantity(actualQuantity);
+            note.setNetQuantity(netQuantity);
+
+            goodReceiptNoteRepository.save(note);
+            receiptNotes.add(note);
+        }
+        return receiptNotes;
+    }
+}
+

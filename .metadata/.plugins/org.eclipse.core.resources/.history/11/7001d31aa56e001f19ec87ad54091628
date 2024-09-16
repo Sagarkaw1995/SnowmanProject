@@ -1,0 +1,51 @@
+package com.example.snowman.models;
+
+
+public class Buyer {
+	
+    private String name = "";
+    private String address = "";
+    private String pinCode = "";
+    private String gstin = "";
+    private String stateName = "";
+    private String code = "";
+    
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPinCode() {
+		return pinCode;
+	}
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+	}
+	public String getGstin() {
+		return gstin;
+	}
+	public void setGstin(String gstin) {
+		this.gstin = gstin;
+	}
+	public String getStateName() {
+		return stateName;
+	}
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+    
+    
+}

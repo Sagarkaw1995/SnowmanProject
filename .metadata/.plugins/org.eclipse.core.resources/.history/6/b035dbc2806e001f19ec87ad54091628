@@ -1,0 +1,21 @@
+package com.example.snowman.models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class Invoice {
+	
+	@Id
+    private String invoiceNo;
+    private String name;
+    private String address;
+    private String cin;
+    private String fscNo;
+    private String gstin;
+    private String email;
+}

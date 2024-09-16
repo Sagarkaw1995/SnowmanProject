@@ -1,0 +1,204 @@
+package com.example.snowman.models;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Invoice {
+	
+    @Id
+    private String invoiceNo;
+    private LocalDate date;
+    private String eWayBillNo;
+    private String modeTermsOfPayment;
+    private String buyersOrderNo;
+    private LocalDate buyersOrderDate;
+    private String despatchDocumentNo;
+    private LocalDateTime deliveryNoteDate;
+    private String despatchedThrough;
+    private String destination;
+    private String billOfLadingNo;
+    private String motorVehicleNo;
+    private String termsOfDelivery;
+    private Double totalValue;
+    private Double totalTaxableValue;
+    private Double totalIGST;
+    private Double totalCGST;
+    private Double totalSGST;
+    private Double totalTax;
+    private Double roundOff;
+    private Double totalInvoiceValue;
+    private String taxAmountInWords;
+    private String amountChargeableInWords;
+    private String declaration;
+    private String irn;
+    private String ackNo;
+    private LocalDate ackDate;
+    
+	public String getInvoiceNo() {
+		return invoiceNo;
+	}
+	public void setInvoiceNo(String invoiceNo) {
+		this.invoiceNo = invoiceNo;
+	}
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+	public String geteWayBillNo() {
+		return eWayBillNo;
+	}
+	public void seteWayBillNo(String eWayBillNo) {
+		this.eWayBillNo = eWayBillNo;
+	}
+	public String getModeTermsOfPayment() {
+		return modeTermsOfPayment;
+	}
+	public void setModeTermsOfPayment(String modeTermsOfPayment) {
+		this.modeTermsOfPayment = modeTermsOfPayment;
+	}
+	public String getBuyersOrderNo() {
+		return buyersOrderNo;
+	}
+	public void setBuyersOrderNo(String buyersOrderNo) {
+		this.buyersOrderNo = buyersOrderNo;
+	}
+	public LocalDate getBuyersOrderDate() {
+		return buyersOrderDate;
+	}
+	public void setBuyersOrderDate(LocalDate buyersOrderDate) {
+		this.buyersOrderDate = buyersOrderDate;
+	}
+	public String getDespatchDocumentNo() {
+		return despatchDocumentNo;
+	}
+	public void setDespatchDocumentNo(String despatchDocumentNo) {
+		this.despatchDocumentNo = despatchDocumentNo;
+	}
+	public LocalDateTime getDeliveryNoteDate() {
+		return deliveryNoteDate;
+	}
+	public void setDeliveryNoteDate(LocalDateTime deliveryNoteDate) {
+		this.deliveryNoteDate = deliveryNoteDate;
+	}
+	public String getDespatchedThrough() {
+		return despatchedThrough;
+	}
+	public void setDespatchedThrough(String despatchedThrough) {
+		this.despatchedThrough = despatchedThrough;
+	}
+	public String getDestination() {
+		return destination;
+	}
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+	public String getBillOfLadingNo() {
+		return billOfLadingNo;
+	}
+	public void setBillOfLadingNo(String billOfLadingNo) {
+		this.billOfLadingNo = billOfLadingNo;
+	}
+	public String getMotorVehicleNo() {
+		return motorVehicleNo;
+	}
+	public void setMotorVehicleNo(String motorVehicleNo) {
+		this.motorVehicleNo = motorVehicleNo;
+	}
+	public String getTermsOfDelivery() {
+		return termsOfDelivery;
+	}
+	public void setTermsOfDelivery(String termsOfDelivery) {
+		this.termsOfDelivery = termsOfDelivery;
+	}
+	public Double getTotalValue() {
+		return totalValue;
+	}
+	public void setTotalValue(Double totalValue) {
+		this.totalValue = totalValue;
+	}
+	public Double getTotalTaxableValue() {
+		return totalTaxableValue;
+	}
+	public void setTotalTaxableValue(Double totalTaxableValue) {
+		this.totalTaxableValue = totalTaxableValue;
+	}
+	public Double getTotalIGST() {
+		return totalIGST;
+	}
+	public void setTotalIGST(Double totalIGST) {
+		this.totalIGST = totalIGST;
+	}
+	public Double getTotalCGST() {
+		return totalCGST;
+	}
+	public void setTotalCGST(Double totalCGST) {
+		this.totalCGST = totalCGST;
+	}
+	public Double getTotalSGST() {
+		return totalSGST;
+	}
+	public void setTotalSGST(Double totalSGST) {
+		this.totalSGST = totalSGST;
+	}
+	public Double getTotalTax() {
+		return totalTax;
+	}
+	public void setTotalTax(Double totalTax) {
+		this.totalTax = totalTax;
+	}
+	public Double getRoundOff() {
+		return roundOff;
+	}
+	public void setRoundOff(Double roundOff) {
+		this.roundOff = roundOff;
+	}
+	public Double getTotalInvoiceValue() {
+		return totalInvoiceValue;
+	}
+	public void setTotalInvoiceValue(Double totalInvoiceValue) {
+		this.totalInvoiceValue = totalInvoiceValue;
+	}
+	public String getTaxAmountInWords() {
+		return taxAmountInWords;
+	}
+	public void setTaxAmountInWords(String taxAmountInWords) {
+		this.taxAmountInWords = taxAmountInWords;
+	}
+	public String getAmountChargeableInWords() {
+		return amountChargeableInWords;
+	}
+	public void setAmountChargeableInWords(String amountChargeableInWords) {
+		this.amountChargeableInWords = amountChargeableInWords;
+	}
+	public String getDeclaration() {
+		return declaration;
+	}
+	public void setDeclaration(String declaration) {
+		this.declaration = declaration;
+	}
+	public String getIrn() {
+		return irn;
+	}
+	public void setIrn(String irn) {
+		this.irn = irn;
+	}
+	public String getAckNo() {
+		return ackNo;
+	}
+	public void setAckNo(String ackNo) {
+		this.ackNo = ackNo;
+	}
+	public LocalDate getAckDate() {
+		return ackDate;
+	}
+	public void setAckDate(LocalDate ackDate) {
+		this.ackDate = ackDate;
+	}
+    
+}

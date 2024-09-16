@@ -1,0 +1,53 @@
+package com.example.snowman.models;
+
+
+public class Seller {
+	
+    private String sellerName;
+    private String sellerAddress;
+    private String sellerCin;
+    private String sellerFscNo;
+    private String sellerGstin;
+    private String sellerEmail;
+    
+	public String getSellerName() {
+		return sellerName;
+	}
+	public void setSellerName(String sellerName) {
+		this.sellerName = sellerName;
+	}
+	public String getSellerAddress() {
+		return sellerAddress;
+	}
+	public void setSellerAddress(String sellerAddress) {
+		this.sellerAddress = sellerAddress;
+	}
+	public String getSellerCin() {
+		return sellerCin;
+	}
+	public void setSellerCin(String sellerCin) {
+		this.sellerCin = sellerCin;
+	}
+	public String getSellerFscNo() {
+		return sellerFscNo;
+	}
+	public void setSellerFscNo(String sellerFscNo) {
+		this.sellerFscNo = sellerFscNo;
+	}
+	public String getSellerGstin() {
+		return sellerGstin;
+	}
+	public void setSellerGstin(String sellerGstin) {
+		this.sellerGstin = sellerGstin;
+	}
+	public String getSellerEmail() {
+		return sellerEmail;
+	}
+	public void setSellerEmail(String sellerEmail) {
+		this.sellerEmail = sellerEmail;
+	}
+    
+
+    
+    
+}

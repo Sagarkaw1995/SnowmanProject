@@ -1,0 +1,62 @@
+package com.example.snowman.models;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Seller {
+	
+    @Id
+    private String invoiceNo;
+    private String name;
+    private String address;
+    private String cin;
+    private String fscNo;
+    private String gstin;
+    private String email;
+    
+	public String getInvoiceNo() {
+		return invoiceNo;
+	}
+	public void setInvoiceNo(String invoiceNo) {
+		this.invoiceNo = invoiceNo;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getCin() {
+		return cin;
+	}
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
+	public String getFscNo() {
+		return fscNo;
+	}
+	public void setFscNo(String fscNo) {
+		this.fscNo = fscNo;
+	}
+	public String getGstin() {
+		return gstin;
+	}
+	public void setGstin(String gstin) {
+		this.gstin = gstin;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+    
+    
+}

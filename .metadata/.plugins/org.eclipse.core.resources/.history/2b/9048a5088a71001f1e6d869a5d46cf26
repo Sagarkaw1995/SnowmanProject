@@ -1,0 +1,86 @@
+package com.example.snowman.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.dto.GoodReceiptNote;
+import com.example.snowman.entities.CartonDB;
+import com.example.snowman.entities.GoodReceiptNoteDB;
+import com.example.snowman.entities.ItemDB;
+import com.example.snowman.repositories.CartonRepository;
+import com.example.snowman.repositories.GoodReceiptNoteRepository;
+import com.example.snowman.repositories.ItemRepository;
+
+@Service
+public class GoodReceiptNoteService {
+
+    @Autowired
+    private CartonRepository cartonRepository;
+
+    @Autowired
+    private ItemRepository itemRepository;
+
+    @Autowired
+    private GoodReceiptNoteRepository goodReceiptNoteRepository;
+
+//    Java8
+//    public List<GoodReceiptNoteDB> generateGoodReceiptNotes(String invoiceNumber) {
+//        List<GoodReceiptNoteDB> receiptNotes = new ArrayList<>();
+//        Map<String, Long> cartonCounts = cartonRepository.findByInvoiceDB_InvoiceNumber(invoiceNumber).stream()
+//                .collect(Collectors.groupingBy(CartonDB::getDescriptionOfGoods, Collectors.counting()));
+//        
+//        for (Map.Entry<String, Long> entry : cartonCounts.entrySet()) {
+//            String description = entry.getKey();
+//            int actualQuantity = entry.getValue().intValue();
+//            ItemDB item = itemRepository.findByInvoiceNumberAndDescriptionOfGoods(invoiceNumber, description);;
+//            int invoicedQuantity = item != null ? item.getQuantityInCase() : 0;
+//            String netQuantity = invoicedQuantity > actualQuantity ? "greater" : invoicedQuantity < actualQuantity ? "less" : "equal";
+//
+//            GoodReceiptNoteDB note = new GoodReceiptNoteDB();
+//            note.setInvoiceNumber(invoiceNumber);
+//            note.setDescriptionOfGoods(description);
+//            note.setInvoicedQuantity(invoicedQuantity);
+//            note.setActualQuantity(actualQuantity);
+//            note.setNetQuantity(netQuantity);
+//
+//            goodReceiptNoteRepository.save(note);
+//            receiptNotes.add(note);
+//        }
+//        return receiptNotes;
+//    }
+    
+    public List<GoodReceiptNote> generateGoodReceiptNotes(String invoiceNumber) {
+        List<GoodReceiptNote> receiptNotes = new ArrayList<>();
+        
+        // Use the custom query method to get carton counts
+        List<Object[]> cartonCounts = cartonRepository.findCartonCountsByInvoiceNumber(invoiceNumber);
+        
+        for (Object[] result : cartonCounts) {
+            String description = (String) result[0];
+            int actualQuantity = ((Long) result[1]).intValue();
+            
+            ItemDB item = itemRepository.findByInvoiceNumberAndDescriptionOfGoods(invoiceNumber, description);
+            int invoicedQuantity = item != null ? item.getQuantityInCase() : 0;
+            String netQuantity = actualQuantity > invoicedQuantity  ? "greater" : actualQuantity < invoicedQuantity ? "less" : "equal";
+            
+            GoodReceiptNote note = new GoodReceiptNote();
+            note.setInvoiceNumber(invoiceNumber);
+            note.setDescriptionOfGoods(description);
+            note.setInvoicedQuantity(invoicedQuantity);
+            note.setActualQuantity(actualQuantity);
+            note.setNetQuantity(netQuantity);
+            
+            //goodReceiptNoteRepository.save(note);
+            receiptNotes.add(note);
+        }
+        
+        return receiptNotes;
+    }
+
+}
+

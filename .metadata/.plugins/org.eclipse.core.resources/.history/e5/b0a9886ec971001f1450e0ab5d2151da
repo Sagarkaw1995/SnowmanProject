@@ -1,0 +1,37 @@
+package com.example.snowman.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.entities.CartonDB;
+import com.example.snowman.entities.InvoiceDB;
+import com.example.snowman.entities.PalletDB;
+import com.example.snowman.repositories.CartonRepository;
+import com.example.snowman.repositories.InvoiceRepository;
+import com.example.snowman.repositories.PalletRepository;
+
+@Service
+public class CartonService {
+	
+    @Autowired
+    private CartonRepository cartonDBRepository;
+
+    @Autowired
+    private InvoiceRepository invoiceDBRepository;
+
+    @Autowired
+    private PalletRepository palletDBRepository;
+
+    public void saveCarton(CartonDB cartonDB) {
+        cartonDBRepository.save(cartonDB);
+    }
+
+    public InvoiceDB findInvoiceByNumber(String invoiceNumber) {
+        return invoiceDBRepository.findById(invoiceNumber).orElse(null);
+    }
+
+    public PalletDB findPalletById(String palletID) {
+        return palletDBRepository.findById(palletID).orElse(null);
+    }
+}
+

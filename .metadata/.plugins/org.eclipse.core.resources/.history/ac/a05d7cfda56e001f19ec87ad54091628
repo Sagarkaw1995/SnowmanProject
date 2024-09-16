@@ -1,0 +1,51 @@
+package com.example.snowman.models;
+
+
+public class Buyer {
+	
+    private String buyerName = "";
+    private String buyerAddress = "";
+    private String buyerPinCode = "";
+    private String buyerGstin = "";
+    private String buyerStateName = "";
+    private String buyerCode = "";
+    
+	public String getBuyerName() {
+		return buyerName;
+	}
+	public void setBuyerName(String buyerName) {
+		this.buyerName = buyerName;
+	}
+	public String getBuyerAddress() {
+		return buyerAddress;
+	}
+	public void setBuyerAddress(String buyerAddress) {
+		this.buyerAddress = buyerAddress;
+	}
+	public String getBuyerPinCode() {
+		return buyerPinCode;
+	}
+	public void setBuyerPinCode(String buyerPinCode) {
+		this.buyerPinCode = buyerPinCode;
+	}
+	public String getBuyerGstin() {
+		return buyerGstin;
+	}
+	public void setBuyerGstin(String buyerGstin) {
+		this.buyerGstin = buyerGstin;
+	}
+	public String getBuyerStateName() {
+		return buyerStateName;
+	}
+	public void setBuyerStateName(String buyerStateName) {
+		this.buyerStateName = buyerStateName;
+	}
+	public String getBuyerCode() {
+		return buyerCode;
+	}
+	public void setBuyerCode(String buyerCode) {
+		this.buyerCode = buyerCode;
+	}
+    
+	    
+}

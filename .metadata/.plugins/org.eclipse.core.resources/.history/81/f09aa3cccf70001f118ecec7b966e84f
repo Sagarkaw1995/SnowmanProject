@@ -1,0 +1,23 @@
+package com.example.snowman.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.snowman.models.InvoiceDB;
+import com.example.snowman.models.ItemDB;
+import com.example.snowman.models.PalletDB;
+import com.example.snowman.repositories.PalletDBRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class PalletDBService {
+	
+	@Autowired
+	private PalletDBRepository palletDBRepository;
+	
+    @Transactional
+    public PalletDB save(PalletDB palletDB) {
+        return palletDBRepository.save(palletDB);
+    }
+}
