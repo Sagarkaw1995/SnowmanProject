@@ -7,9 +7,6 @@ public class PalletDTO {
 	@JsonProperty("palletID")
     private String palletID;
 	
-	@JsonProperty("coordinatesXYZ")
-    private int coordinatesXYZ;
-	
 	@JsonProperty("maxWeight")
     private int maxWeight;
     
