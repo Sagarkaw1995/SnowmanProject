@@ -2,19 +2,21 @@ package com.example.snowman.dto;
 
 public class GoodReceiptNote {
 	
-    private String invoiceNumber;
+    //private String invoiceNumber;
     private String descriptionOfGoods;
     private int invoicedQuantity;
     private int actualQuantity;
+	private int damagedQuantity;
     private String netQuantity;
     
     
-	public String getInvoiceNumber() {
-		return invoiceNumber;
-	}
-	public void setInvoiceNumber(String invoiceNumber) {
-		this.invoiceNumber = invoiceNumber;
-	}
+	// public String getInvoiceNumber() {
+	// 	return invoiceNumber;
+	// }
+	// public void setInvoiceNumber(String invoiceNumber) {
+	// 	this.invoiceNumber = invoiceNumber;
+	// }
+
 	public String getDescriptionOfGoods() {
 		return descriptionOfGoods;
 	}
@@ -33,12 +35,19 @@ public class GoodReceiptNote {
 	public void setActualQuantity(int actualQuantity) {
 		this.actualQuantity = actualQuantity;
 	}
+	public int getDamagedQuantity() {
+		return damagedQuantity;
+	}
+	public void setDamagedQuantity(int damagedQuantity) {
+		this.damagedQuantity = damagedQuantity;
+	}
 	public String getNetQuantity() {
 		return netQuantity;
 	}
 	public void setNetQuantity(String netQuantity) {
 		this.netQuantity = netQuantity;
 	}
+	
     
     
     

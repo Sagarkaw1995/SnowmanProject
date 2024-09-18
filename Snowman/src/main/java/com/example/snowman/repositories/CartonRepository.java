@@ -14,6 +14,6 @@ public interface CartonRepository extends JpaRepository<CartonDB, Long>{
 	
 	//List<CartonDB> findByInvoiceDB_InvoiceNumber(String iNo);
 	
-	@Query("SELECT c.descriptionOfGoods, COUNT(c) FROM CartonDB c WHERE c.invoiceDB.invoiceNumber = :invoiceNumber GROUP BY c.descriptionOfGoods")
+	@Query("SELECT c.descriptionOfGoods, COUNT(c), SUM(c.rejected) FROM CartonDB c WHERE c.invoiceDB.invoiceNumber = :invoiceNumber GROUP BY c.descriptionOfGoods")
     List<Object[]> findCartonCountsByInvoiceNumber(@Param("invoiceNumber") String invoiceNumber);
 }
